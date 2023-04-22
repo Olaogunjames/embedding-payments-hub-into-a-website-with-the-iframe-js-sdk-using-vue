@@ -18,12 +18,12 @@ function initialize_sdk(mid, gateway_public_key)
   // triggered when credentials are validated and iframes loaded:
   PayNowSdk().on('ready', () => {
     // set styling for the iframe fields
-    const numberStyling = 'border: 1px solid black; width: 160px; height: 20px;';
-    const cvvStyling = 'border: 1px solid black; width: 38px; height: 20px;';
+    const numberStyling = 'border: 1px solid black; width: 90%; height: 20px;';
+    const cvvStyling = 'border: 1px solid black; width: 90%; height: 20px;';
     //comment out the next three lines if you do not want the customer to enter their billing street and zip for AVS
-    const streetStyling = 'border: 1px solid black; width: 200px; height: 20px;';
-    const zipStyling = 'border: 1px solid black; width: 90px; height: 20px;';
-    const zip4Styling = 'border: 1px solid black; width: 80px; height: 20px;';
+    const streetStyling = 'border: 1px solid black; width: 90%; height: 20px;';
+    const zipStyling = 'border: 1px solid black; width: 90%; height: 20px;';
+    const zip4Styling = 'border: 1px solid black; width: 90%; height: 20px;';
 
     PayNowSdk().setStyle('number', numberStyling);
     PayNowSdk().setStyle('cvv', cvvStyling);

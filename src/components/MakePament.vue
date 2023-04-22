@@ -4,9 +4,17 @@
     <p class="product__description">{{ product.description }}</p>
     <p class="product__price">Price: {{ product.price }} USD</p>
 
-    <div style="display:none;">
+    <form id="pay">
       <label>Card Number:</label>
       <div id="card-number" class="form-field"></div>
+      <div class="custom-inputs">
+        <label>Card Month:</label>
+        <input class="custom-input" id="card-month" type="text" autocomplete="off" size="4" maxlength="2">
+      </div>
+      <div class="custom-inputs">
+        <label>Card Year:</label>
+        <input class="custom-input" id="card-year" type="text" autocomplete="off" size="4" maxlength="4">
+      </div>
       <label>CVV:</label>
       <div id="card-cvv" class="form-field"></div>
       <!-- comment out or remove the below section if you do not want the customer to enter their billing street and zip for AVS -->
@@ -19,7 +27,7 @@
       <input type="hidden" id="avs-fields-data" />
       <!-- end of AVS section -->
       <input type="hidden" id="card-token" />
-    </div>
+    </form>
     <button class="product__button" name="tokenize_and_pay" value="Pay Now" @click="handlePayment">Pay Now</button>
   </div>
 </template>
@@ -84,5 +92,24 @@ export default {
 
 .product__button:hover {
   background-color: #3e8e41;
+}
+
+.form-field{
+  max-height: 70px;
+}
+
+.custom-input{
+  border: 1px solid black;
+  width: 90%;
+  height: 20px;
+  background: transparent;
+  border-radius: 3px;
+  padding: 0.65em 0.5em;
+  font-size: 91%;
+}
+
+.custom-inputs{
+  max-height: 100px;
+  height: 90px;
 }
 </style>
