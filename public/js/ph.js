@@ -86,8 +86,32 @@ const getToken = async () => {
     const json_string = JSON.stringify(avsFields);
     document.getElementById('avs-fields-data').value = json_string;
 
-    //replace 'pay' below with the id of your form
-    document.getElementById('pay').submit();
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    
+    var raw = JSON.stringify({
+      "amount": document.getElementById('product_price').value,
+      "token": document.getElementById('card-token').value
+    });
+    
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+    
+    fetch("{{link-to-your-server-side-application}}", requestOptions)
+      .then(response => response.json())
+      .then((result) => {
+
+                console.log(result);
+
+            } 
+        )
+      .catch(error => console.log('error', error));
+
   }
 }
 

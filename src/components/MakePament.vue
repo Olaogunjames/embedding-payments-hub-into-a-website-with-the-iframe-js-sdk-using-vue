@@ -1,10 +1,11 @@
 <template>
   <div class="product">
-    <h2 class="product__name">{{ product.name }}</h2>
-    <p class="product__description">{{ product.description }}</p>
-    <p class="product__price">Price: {{ product.price }} USD</p>
+    <h2 class="product_name">{{ product.name }}</h2>
+    <p class="product_description">{{ product.description }}</p>
+    <p class="product_price">Price: {{ product.price }} USD</p>
 
     <form id="pay">
+      <input type="hidden" name="product_price" id="product_price" :value="product.price">
       <label>Card Number:</label>
       <div id="card-number" class="form-field"></div>
       <div class="custom-inputs">
@@ -40,19 +41,19 @@ export default {
       product: {
         name: 'My Product',
         description: 'This is my favorite product',
-        price: 10.00
+        price: 2.00
       }
     }
   },
   methods: {
     async handlePayment() {
       const ph = await require('../../public/js/ph.js');
-      ph.getToken('Your MID','Your Gateway Public Key');
+      ph.getToken();
     }
   },
   mounted() {
     const ph = require('../../public/js/ph.js');
-    ph.initialize_sdk('3130034155392','526bcd8cb4e1e1f79b211a7b36736c92');
+    ph.initialize_sdk('Your MID','Your_Gateway_Public_Key');
   },
 }
 </script>
@@ -66,22 +67,22 @@ export default {
   max-width: 300px;
 }
 
-.product__name {
+.product_name {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
-.product__description {
+.product_description {
   font-size: 16px;
   margin-bottom: 10px;
 }
 
-.product__price {
+.product_price {
   font-size: 18px;
   margin-bottom: 10px;
 }
 
-.product__button {
+.product_button {
   background-color: #4caf50;
   color: #fff;
   border: none;
@@ -90,7 +91,7 @@ export default {
   cursor: pointer;
 }
 
-.product__button:hover {
+.product_button:hover {
   background-color: #3e8e41;
 }
 
