@@ -1,6 +1,11 @@
 // this file contains all the JavaScript needed to initialize the iFrame JavaScript SDK and tokenize a card.
 // you can customize the styling of the iFrame fields, adjust the error handling logic, and more by editing this file.
 
+/**
+ * Also pay attention to the following keyword in the script
+ * {{link-to-your-server-side-application}} : The link to your server side application. 
+ * 
+ */
 const PayNowSdk = window.PayNow;
 
 // call this function on page load

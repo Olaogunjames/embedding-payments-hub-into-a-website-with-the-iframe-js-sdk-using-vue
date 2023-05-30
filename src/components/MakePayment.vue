@@ -47,6 +47,7 @@ export default {
   },
   methods: {
     async handlePayment() {
+      // The handlePayment function is triggered when the payment form is submitted and then the getToken() function is then called in the ph.js script to tokenize the card.
       const ph = await require('../../public/js/ph.js');
       ph.getToken();
     }

@@ -1,15 +1,15 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <MakePament/>
+  <MakePayment/>
 </template>
 
 <script>
-import MakePament from './components/MakePament.vue'
+import MakePayment from './components/MakePayment.vue'
 
 export default {
   name: 'App',
   components: {
-    MakePament
+    MakePayment
   }
 }
 </script>
