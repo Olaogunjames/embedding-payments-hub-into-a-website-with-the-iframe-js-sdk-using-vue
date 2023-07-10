@@ -1,15 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <MakePayment/>
+  <RouterView />
 </template>
 
 <script>
-import MakePayment from './components/MakePayment.vue'
+import { RouterView } from 'vue-router'
 
 export default {
   name: 'App',
   components: {
-    MakePayment
+    RouterView
   }
 }
 </script>

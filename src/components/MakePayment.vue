@@ -1,4 +1,5 @@
 <template>
+  <img alt="Vue logo" src="../assets/logo.png">
   <div class="product">
     <h2 class="product_name">{{ product.name }}</h2>
     <p class="product_description">{{ product.description }}</p>
