@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="../assets/logo.png">
+  <img alt="Vue logo" :src="product.image">
   <div class="product">
     <h2 class="product_name">{{ product.name }}</h2>
     <p class="product_description">{{ product.description }}</p>
@@ -40,9 +40,11 @@ export default {
   data() {
     return {
       product: {
-        name: 'My Product',
-        description: 'This is my favorite product',
-        price: 2.00
+        id: 0,
+        name: '',
+        description: '',
+        price: 0,
+        image: ''
       }
     }
   },
@@ -54,6 +56,10 @@ export default {
     }
   },
   mounted() {
+    const productData = localStorage.getItem("productData");
+    if (productData) {
+      this.product = JSON.parse(productData)
+    }
     const ph = require('../../public/js/ph.js');
     ph.initialize_sdk('Your MID','Your_Gateway_Public_Key');
   },

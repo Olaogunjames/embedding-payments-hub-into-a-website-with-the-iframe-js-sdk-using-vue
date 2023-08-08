@@ -2,10 +2,10 @@
     <h1>Products List</h1>
     <div class="product-list">
         <div v-for="product in products" :key="product.id" class="product-card">
-           <RouterLink to="/make-payment">
+           <RouterLink to="/make-payment" @click="saveToLocalStorage(product)">
                 <img :src="product.image" alt="Product Image" class="product-image" />
                 <h3 class="product-title">{{ product.name }}</h3>
-                <p class="product-price">{{ product.price }}</p>
+                <p class="product-price">${{ product.price }}</p>
             </RouterLink>
         </div>
     </div>
@@ -21,79 +21,93 @@ export default {
           id: 1,
           name: "Product 1",
           image: "img/logo.82b9c7a5.png",
-          price: "$10.99",
+          price: "1.99",
+          description: 'This is my favorite product 1',
         },
         {
           id: 2,
           name: "Product 2",
           image: "img/logo.82b9c7a5.png",
-          price: "$19.99",
+          price: "1.59",
+          description: 'This is my favorite product 2',
         },
         {
           id: 3,
           name: "Product 3",
           image: "img/logo.82b9c7a5.png",
-          price: "$13.99",
+          price: "1.97",
+          description: 'This is my favorite product 3',
         },
         {
           id: 4,
           name: "Product 4",
           image: "img/logo.82b9c7a5.png",
-          price: "$14.99",
+          price: "1.19",
+          description: 'This is my favorite product 4',
         },
         {
           id: 5,
           name: "Product 5",
           image: "img/logo.82b9c7a5.png",
-          price: "$15.99",
+          price: "1.39",
+          description: 'This is my favorite product 5',
         },
         {
           id: 6,
           name: "Product 6",
           image: "img/logo.82b9c7a5.png",
-          price: "$16.99",
+          price: "1.22",
+          description: 'This is my favorite product 6',
         },
         {
           id: 7,
           name: "Product 7",
           image: "img/logo.82b9c7a5.png",
-          price: "$17.99",
+          price: "1.44",
+          description: 'This is my favorite product 7',
         },
         {
           id: 8,
           name: "Product 8",
           image: "img/logo.82b9c7a5.png",
-          price: "$18.99",
+          price: "18.99",
+          description: 'This is my favorite product 8',
         },
         {
           id: 9,
           name: "Product 9",
           image: "img/logo.82b9c7a5.png",
-          price: "$19.99",
+          price: "1.76",
+          description: 'This is my favorite product 9',
         },
         {
           id: 10,
           name: "Product 10",
           image: "img/logo.82b9c7a5.png",
-          price: "$10.99",
+          price: "1.32",
+          description: 'This is my favorite product 10',
         },
         {
           id: 11,
           name: "Product 11",
           image: "img/logo.82b9c7a5.png",
-          price: "$11.99",
+          price: "1.71",
+          description: 'This is my favorite product 11',
         },
         {
           id: 12,
           name: "Product 12",
           image: "img/logo.82b9c7a5.png",
-          price: "$3.99",
+          price: "1.09",
+          description: 'This is my favorite product 12',
         }
       ]
     }
   },
   methods: {
-    //
+    saveToLocalStorage(product){
+      localStorage.setItem("productData", JSON.stringify(product));
+    }
   },
   mounted() {
    //
